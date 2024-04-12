@@ -69,17 +69,19 @@ function drawMainMenu(){
 function drawRegisterMenu(){
 
 }
-class Button{
-  constructor(x, y, txt){
+class TextBox{
+  constructor(x, y,itxt, btxt){
     this.x = x;
     this.y = y;
     this.size = size;
-    this.txt = txt;
-    this.button = createButton(txt)
+    this.btxt = btxt;
+    this.
+    this.button = createButton(btxt)
     this.button.position(x,y);
     this.button.mousePressed(message())
   }
 }
+
 function makeButton(buttonWidth, buttonHeight){
   input = createInput();
   input.position(buttonWidth, buttonHeight);
@@ -92,9 +94,9 @@ function message() {
   print("hello" + input.value() +  "vro")
 }
 
-function sendData(Type, data) {
+function sendData(type, data) {
   // sends data to the server; contains a message and a type, used to tell the server what to do with the received message data
-  let newMessage = { messageType: Type, data: data };
+  let newMessage = { messageType: type, data: data };
   let newMessageString = JSON.stringify(newMessage);
 
   ws.send(newMessageString);
