@@ -70,26 +70,19 @@ function drawRegisterMenu(){
 
 }
 class TextBox{
-  constructor(x, y,itxt, btxt){
+  constructor(x, y, btxt){
     this.x = x;
     this.y = y;
-    this.size = size;
     this.btxt = btxt;
-    this.
-    this.button = createButton(btxt)
-    this.button.position(x,y);
-    this.button.mousePressed(message())
+    this.input = createInput();
+    this.input.position(x, y);
+    button = createButton(btxt);
+    button.position(input.x + input.width*1.2, y);
+    button.mousePressed(message);
   }
 }
 
-function makeButton(buttonWidth, buttonHeight){
-  input = createInput();
-  input.position(buttonWidth, buttonHeight);
-  button = createButton("ok vro");
-  button.position(input.x + input.width*1.2, height/2);
-  button.mousePressed(message);
 
-}
 function message() {
   print("hello" + input.value() +  "vro")
 }
